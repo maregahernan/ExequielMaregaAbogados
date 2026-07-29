@@ -1,0 +1,60 @@
+/*
+ * ============================================================
+ * variables.css — Identidad visual Exequiel Marega Abogado
+ * Sobrescribe tokens de Bootstrap 5 (CDN) vía CSS custom properties.
+ * ============================================================
+ */
+
+:root {
+  /* —— Paleta obligatoria —— */
+  --em-black: #0d0d0d;
+  --em-black-soft: #161616;
+  --em-black-muted: #1c1c1c;
+  --em-white: #ffffff;
+  --em-off-white: #fafafa;
+  --em-copper: #b87333;
+  --em-gold: #c9a227;
+  --em-gold-bright: #d4af37;
+  --em-gold-muted: #a88b2a;
+  --em-accent: var(--em-gold);
+  --em-accent-hover: #e0c04a;
+  --em-gray: #6b6b6b;
+  --em-gray-light: #b0b0b0;
+  --em-gray-border: #e5e5e5;
+  --em-error: #c0392b;
+  --em-success: #2e7d4f;
+  --em-whatsapp: #25d366;
+
+  /* —— Tipografía —— */
+  --em-font-serif: "Cormorant Garamond", "Times New Roman", serif;
+  --em-font-sans: "Montserrat", system-ui, sans-serif;
+
+  /* —— Bootstrap 5 overrides —— */
+  --bs-body-font-family: var(--em-font-sans);
+  --bs-body-color: var(--em-black);
+  --bs-body-bg: var(--em-off-white);
+  --bs-primary: var(--em-accent);
+  --bs-primary-rgb: 201, 162, 39;
+  --bs-secondary: var(--em-black);
+  --bs-secondary-rgb: 13, 13, 13;
+  --bs-dark: var(--em-black);
+  --bs-dark-rgb: 13, 13, 13;
+  --bs-light: var(--em-off-white);
+  --bs-border-radius: 0.125rem;
+  --bs-border-radius-sm: 0.0625rem;
+  --bs-border-radius-lg: 0.25rem;
+  --bs-border-color: var(--em-gray-border);
+  --bs-link-color: var(--em-accent);
+  --bs-link-hover-color: var(--em-gold-bright);
+  --bs-focus-ring-color: rgba(201, 162, 39, 0.35);
+  --bs-box-shadow: 0 0.5rem 1.5rem rgba(13, 13, 13, 0.08);
+  --bs-box-shadow-sm: 0 0.125rem 0.5rem rgba(13, 13, 13, 0.06);
+
+  /* —— Layout —— */
+  --em-header-top-h: 2.25rem;
+  --em-nav-h: 4.25rem;
+  --em-section-y: clamp(3.5rem, 8vw, 6.5rem);
+  --em-max: 1140px;
+  --em-line: 1px solid rgba(201, 162, 39, 0.55);
+  --em-transition: 0.25s ease;
+}

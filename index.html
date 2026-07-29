@@ -1,167 +1,460 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Horacio Exequiel Marega Abogado — Asesoramiento jurídico cercano, ético y profesional. Derecho penal, familia, laboral, civil y bancario.">
+  <meta name="theme-color" content="#0D0D0D">
+  <title>Horacio Exequiel Marega Abogado | Despacho jurídico</title>
 
-<title>Abogado Laboral en Paran&aacute; | Consulta Gratis</title>
+  <!--
+    NOTAS DE SEGURIDAD PARA PRODUCCIÓN (despliegue)
+    ================================================
+    - Servir SIEMPRE por HTTPS.
+    - Configurar cabeceras en el servidor (nginx/IIS/Apache), p. ej.:
+        Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';
+        X-Frame-Options: DENY
+        X-Content-Type-Options: nosniff
+        Strict-Transport-Security: max-age=31536000; includeSubDomains
+        Referrer-Policy: strict-origin-when-cross-origin
+        Permissions-Policy: camera=(), microphone=(), geolocation=()
+    - El formulario debe POSTear a un backend propio con validación server-side,
+      rate limiting, honeypot/captcha y almacenamiento cifrado.
+    - No guardar datos personales en localStorage/sessionStorage.
+    - No embeber API keys ni secretos en este HTML/JS.
+  -->
 
-<meta name="description" content="Abogado laboral en Paran&aacute;. Despidos, indemnizaci&oacute;n y ART. Consulta sin cargo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #222;
-}
+  <!-- Bootstrap 5.3.3 (CDN oficial) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-/* HERO */
-header {
-    background: #0a2540;
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.cta {
-    display: inline-block;
-    margin-top: 20px;
-    background: #25d366;
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* SECCIONES */
-section {
-    padding: 50px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-/* SOBRE MI */
-.sobre-mi {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 30px;
-}
-
-.sobre-mi img {
-    width: 250px;
-    border-radius: 10px;
-}
-
-.sobre-mi div {
-    flex: 1;
-}
-
-/* FORMULARIO */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input, textarea {
-    padding: 10px;
-    font-size: 16px;
-    width: 100%;
-}
-
-button {
-    background: #0a2540;
-    color: white;
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-}
-
-/* MAPA */
-iframe {
-    width: 100%;
-    height: 300px;
-    border: 0;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-    .sobre-mi {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-</style>
-
+  <!-- Overrides de identidad (después de Bootstrap) -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+<body id="top">
 
-<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-<!-- HERO -->
-<header>
-<h1>Abogado Laboral en Paran&aacute;, Entre R&iacute;os</h1>
-<p>Especialista en despidos, indemnizaci&oacute;n laboral, trabajo en negro y ART</p>
-<a class="cta" href="https://wa.me/5493430000000">Consulta por WhatsApp</a>
-</header>
-
-<!-- PRESENTACIÓN -->
-<section>
-<h2>Asesoramiento legal laboral r&aacute;pido y efectivo</h2>
-<p>
-Si tuviste un despido, no te pagan lo que corresponde o trabaj&aacute;s en negro,
-te ayudo a reclamar lo que legalmente te corresponde.
-</p>
-</section>
-
-<!-- SOBRE MI -->
-<section>
-<h2>Sobre m&iacute;</h2>
-
-<div class="sobre-mi">
-    <img src="img1.jpg" alt="Abogado">
-
-    <div>
-        <p>
-        Soy abogado especializado en derecho laboral con experiencia en
-        reclamos por despidos, indemnizaciones y conflictos laborales.
-        Brindo atenci&oacute;n personalizada y acompa&ntilde;amiento en todo el proceso.
-        </p>
+  <!-- ========== 1. HEADER ========== -->
+  <header class="em-site-header" role="banner">
+    <!-- Barra superior -->
+    <div class="em-topbar">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center py-1">
+        <div class="d-none d-md-block">
+          <a href="mailto:exequielmarega@gmail.com">exequielmarega@gmail.com</a>
+          <span class="em-topbar-sep" aria-hidden="true">|</span>
+          <span><!-- TODO: completar dirección -->Consultas con cita previa</span>
+        </div>
+        <div>
+          <a href="tel:+54343155118321">0343 155 118321</a>
+        </div>
+      </div>
     </div>
-</div>
 
-</section>
+    <nav class="navbar navbar-expand-lg em-navbar" id="mainNav" aria-label="Principal">
+      <div class="container">
+        <a class="em-brand navbar-brand mb-0" href="#top">
+          <img class="em-brand-logo" src="img/Logo.jpg" width="48" height="48" alt="Horacio Exequiel Marega Abogado">
+          <span class="em-brand-text">
+            <span class="em-brand-name">Horacio Exequiel Marega</span>
+            <span class="em-brand-tag">Abogado</span>
+          </span>
+        </a>
 
-<!-- CONTACTO -->
-<section>
-<h2>Contacto</h2>
-<p>Enviame tu consulta y te respondo a la brevedad.</p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<form action="mailto:tucorreo@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="nombre" placeholder="Tu nombre" required>
-    <input type="email" name="correo" placeholder="Tu correo" required>
-    <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#valores">La firma</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#servicios" id="serviciosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Áreas de Servicio</a>
+              <ul class="dropdown-menu" aria-labelledby="serviciosDropdown">
+                <li><a class="dropdown-item" href="#servicio-penal">Derecho Penal</a></li>
+                <li><a class="dropdown-item" href="#servicio-familia">Derecho de Familia</a></li>
+                <li><a class="dropdown-item" href="#servicio-laboral">Derecho Laboral</a></li>
+                <li><a class="dropdown-item" href="#servicio-civil">Derecho Civil</a></li>
+                <li><a class="dropdown-item" href="#servicio-bancario">Derecho Bancario</a></li>
+                <li><a class="dropdown-item" href="#servicio-comercial">Derecho Comercial</a></li>
+                <li><a class="dropdown-item" href="#servicio-sucesiones">Sucesiones</a></li>
+                <li><a class="dropdown-item" href="#servicio-accidentes">Accidentes y Daños</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#especialidades">Especialidades</a></li>
+            <li class="nav-item"><a class="nav-link" href="#fundador">Sobre mí</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            <li class="nav-item ms-lg-3">
+              <a class="btn-em btn-em--nav" href="tel:+54343155118321">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.35a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.75.32 1.54.55 2.35.68A2 2 0 0 1 22 16.92z"/></svg>
+                Llamar
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    <button type="submit">Enviar consulta</button>
-</form>
+  <main id="contenido">
 
-</section>
+    <!-- ========== 2. HERO ========== -->
+    <section class="em-hero" aria-labelledby="hero-title">
+      <img class="em-hero-watermark" src="img/Logo.svg" alt="" aria-hidden="true" width="800" height="800">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8 col-xl-7">
+            <p class="em-hero-brand">Horacio Exequiel Marega Abogado</p>
+            <h1 id="hero-title" class="em-hero-title">
+              Defensa seria.<br>
+              Trato humano.<br>
+              <span class="em-accent">Prepara la billetera.</span>
+            </h1>
+            <hr class="em-divider">
+            <p class="em-hero-lead">
+              Cercanía, confianza y honestidad en cada consulta. Asesoramiento jurídico
+              claro, ético y comprometido con tu caso.
+            </p>
+            <a class="btn-em" href="#contacto">Solicitar consulta</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- MAPA -->
-<section>
-<h2>Ubicaci&oacute;n</h2>
-<iframe src="https://www.google.com/maps?q=Parana+Entre+Rios&output=embed"></iframe>
-</section>
+    <!-- ========== 3. VALORES / CONFIANZA ========== -->
+    <section id="valores" class="em-section" aria-labelledby="valores-title">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <p class="em-kicker">Nuestra firma</p>
+            <h2 id="valores-title">Servicio jurídico con seriedad y cercanía</h2>
+            <hr class="em-divider em-divider--center">
+            <p class="em-values-lead mx-auto mb-0">
+              Creemos que el ejercicio del derecho comienza con escuchar. Por eso,
+              ofrecemos un servicio jurídico cercano, responsable y comprometido,
+              brindando soluciones legales con seriedad, ética y un trato humano en cada caso.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- FOOTER -->
-<section style="text-align:center; font-size:14px;">
-<p>Abogado laboral en Paran&aacute; | Atenci&oacute;n personalizada</p>
-</section>
+    <!-- ========== 4. FORMULARIO DE CONTACTO RÁPIDO ========== -->
+    <section id="contacto" class="em-section em-section--dark" aria-labelledby="contacto-title">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <p class="em-kicker">Contacto</p>
+            <h2 id="contacto-title">Contacta con nosotros</h2>
+            <hr class="em-divider">
+            <p class="mb-4" style="color: var(--em-gray-light); max-width: 36rem;">
+              Contanos brevemente tu situación. Te respondemos a la mayor brevedad.
+              Los datos se tratan conforme a nuestra
+              <a href="privacidad.html">Política de Privacidad</a>.
+            </p>
 
+            <!--
+              BACKEND: este formulario debe enviarse por HTTPS a un endpoint propio.
+              Validar/sanitizar en servidor; rate limit; captcha; no confiar en el cliente.
+            -->
+            <form id="contactForm" class="em-contact-form" novalidate autocomplete="on" method="post" action="#">
+              <!-- Honeypot anti-bot (no completar) -->
+              <div class="em-hp" aria-hidden="true">
+                <label for="company_website">Sitio web de empresa</label>
+                <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="name">Nombre completo</label>
+                  <input class="form-control" type="text" id="name" name="name" required maxlength="80" autocomplete="name" aria-required="true" placeholder="Tu nombre">
+                  <div class="invalid-feedback" role="alert"></div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="email">Correo electrónico</label>
+                  <input class="form-control" type="email" id="email" name="email" required maxlength="120" autocomplete="email" inputmode="email" aria-required="true" placeholder="tu@email.com">
+                  <div class="invalid-feedback" role="alert"></div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="phone">Teléfono</label>
+                  <input class="form-control" type="tel" id="phone" name="phone" maxlength="30" autocomplete="tel" inputmode="tel" placeholder="0343 155 118321">
+                  <div class="invalid-feedback" role="alert"></div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="service">¿Cómo puedo ayudarte?</label>
+                  <select class="form-select" id="service" name="service" required aria-required="true">
+                    <option value="" selected disabled>Seleccioná un área</option>
+                    <option value="Derecho Penal">Derecho Penal</option>
+                    <option value="Derecho de Familia">Derecho de Familia</option>
+                    <option value="Derecho Laboral">Derecho Laboral</option>
+                    <option value="Derecho Civil">Derecho Civil</option>
+                    <option value="Derecho Bancario">Derecho Bancario</option>
+                    <option value="Derecho Comercial">Derecho Comercial</option>
+                    <option value="Sucesiones">Sucesiones</option>
+                    <option value="Accidentes y Daños">Accidentes y Daños</option>
+                    <option value="Otra consulta">Otra consulta</option>
+                  </select>
+                  <div class="invalid-feedback" role="alert"></div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="message">Mensaje</label>
+                  <textarea class="form-control" id="message" name="message" rows="4" required maxlength="2000" aria-required="true" placeholder="Resumen de tu consulta (sin datos sensibles innecesarios)"></textarea>
+                  <div class="invalid-feedback" role="alert"></div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="privacy" name="privacy" value="1" required aria-required="true">
+                    <label class="form-check-label" for="privacy">
+                      He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a>
+                      y el <a href="aviso-legal.html" target="_blank" rel="noopener">Aviso Legal</a>.
+                    </label>
+                    <div class="invalid-feedback" role="alert">Debés aceptar la Política de Privacidad.</div>
+                  </div>
+                </div>
+                <div class="col-12 d-flex flex-wrap align-items-center gap-3 mt-2">
+                  <button class="btn-em" type="submit">Enviar consulta</button>
+                  <p id="formStatus" class="em-form-status mb-0" aria-live="polite"></p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5. GRID DE SERVICIOS ========== -->
+    <section id="servicios" class="em-section" aria-labelledby="servicios-title">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="em-kicker">Áreas de práctica</p>
+          <h2 id="servicios-title">Servicios jurídicos</h2>
+          <hr class="em-divider em-divider--center">
+        </div>
+
+        <div class="row g-4">
+          <!-- Penal -->
+          <div class="col-md-6 col-xl-3" id="servicio-penal">
+            <article class="em-service-card">
+              <div class="em-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3v18M5 8h14M7 8l-2 13h14l-2-13M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+              </div>
+              <h3 class="em-service-title">Derecho Penal</h3>
+              <p class="em-service-text">Defensa técnica en causas penales, con estrategia clara y respeto por tus derechos.</p>
+              <a class="em-service-link" href="#contacto">Más info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </article>
+          </div>
+          <!-- Familia -->
+          <div class="col-md-6 col-xl-3" id="servicio-familia">
+            <article class="em-service-card">
+              <div class="em-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="em-service-title">Derecho de Familia</h3>
+              <p class="em-service-text">Divorcios, alimentos, régimen de comunicación y mediación con enfoque humano.</p>
+              <a class="em-service-link" href="#contacto">Más info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </article>
+          </div>
+          <!-- Laboral -->
+          <div class="col-md-6 col-xl-3" id="servicio-laboral">
+            <article class="em-service-card">
+              <div class="em-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+              </div>
+              <h3 class="em-service-title">Derecho Laboral</h3>
+              <p class="em-service-text">Despidos, liquidaciones, accidentes de trabajo y reclamos frente al empleador.</p>
+              <a class="em-service-link" href="#contacto">Más info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </article>
+          </div>
+          <!-- Civil -->
+          <div class="col-md-6 col-xl-3" id="servicio-civil">
+            <article class="em-service-card">
+              <div class="em-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+              </div>
+              <h3 class="em-service-title">Derecho Civil</h3>
+              <p class="em-service-text">Contratos, responsabilidad civil, obligaciones y conflictos patrimoniales.</p>
+              <a class="em-service-link" href="#contacto">Más info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </article>
+          </div>
+          <!-- Bancario -->
+          <div class="col-md-6 col-xl-3" id="servicio-bancario">
+            <article class="em-service-card">
+              <div class="em-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+              </div>
+              <h3 class="em-service-title">Derecho Bancario</h3>
+              <p class="em-service-text">Defensa del consumidor financiero, créditos, intereses y cláusulas abusivas.</p>
+              <a class="em-service-link" href="#contacto">Más info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </article>
+          </div>
+          <!-- Comercial -->
+          <div class="col-md-6 col-xl-3" id="servicio-comercial">
+            <article class="em-service-card">
+              <div class="em-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <h3 class="em-service-title">Derecho Comercial</h3>
+              <p class="em-service-text">Sociedades, acuerdos comerciales y asesoramiento para emprendedores y empresas.</p>
+              <a class="em-service-link" href="#contacto">Más info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </article>
+          </div>
+          <!-- Sucesiones -->
+          <div class="col-md-6 col-xl-3" id="servicio-sucesiones">
+            <article class="em-service-card">
+              <div class="em-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+              </div>
+              <h3 class="em-service-title">Sucesiones</h3>
+              <p class="em-service-text">Declaratorias de herederos, particiones y planificación sucesoria.</p>
+              <a class="em-service-link" href="#contacto">Más info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </article>
+          </div>
+          <!-- Accidentes -->
+          <div class="col-md-6 col-xl-3" id="servicio-accidentes">
+            <article class="em-service-card">
+              <div class="em-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+              </div>
+              <h3 class="em-service-title">Accidentes y Daños</h3>
+              <p class="em-service-text">Reclamos por daños y perjuicios, accidentes de tránsito y responsabilidad civil.</p>
+              <a class="em-service-link" href="#contacto">Más info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 6. ESPECIALIDADES DESTACADAS ========== -->
+    <section id="especialidades" class="em-section em-section--dark" aria-labelledby="esp-title">
+      <div class="container">
+        <div class="row align-items-end mb-4">
+          <div class="col-lg-8">
+            <p class="em-kicker">Foco profesional</p>
+            <h2 id="esp-title">Especialidades <span class="em-accent">destacadas</span></h2>
+            <hr class="em-divider">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-10">
+            <div class="em-specialty">
+              <p class="em-kicker mb-2">01 — Defensa</p>
+              <h3 class="em-specialty-title">Litigios penales y estrategia procesal</h3>
+            </div>
+            <div class="em-specialty">
+              <p class="em-kicker mb-2">02 — Familia</p>
+              <h3 class="em-specialty-title">Conflictos familiares con enfoque conciliador</h3>
+            </div>
+            <div class="em-specialty">
+              <p class="em-kicker mb-2">03 — Laboral &amp; civil</p>
+              <h3 class="em-specialty-title">Reclamos patrimoniales y laborales con resultados medibles</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 7. SOBRE EL FUNDADOR ========== -->
+    <section id="fundador" class="em-section" aria-labelledby="fundador-title">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-md-5 col-lg-4">
+            <div class="em-founder-frame">
+              <img class="em-founder-photo" src="img/AboutMe.jpg" width="480" height="600" alt="Horacio Exequiel Marega, abogado">
+            </div>
+          </div>
+          <div class="col-md-7 col-lg-7">
+            <p class="em-kicker">Sobre mí</p>
+            <h2 id="fundador-title">Horacio Exequiel Marega</h2>
+            <hr class="em-divider">
+            <p>
+              Creemos que el ejercicio del derecho comienza con escuchar. Por eso,
+              ofrecemos un servicio jurídico cercano, responsable y comprometido,
+              brindando soluciones legales con seriedad, ética y un trato humano en cada caso.
+            </p>
+            <div class="em-founder-creds">
+              <p class="mb-1"><strong>Abogado</strong> — Servicios jurídicos</p>
+              <p class="mb-1"><!-- TODO: completar -->Matrícula / Colegiado: <em>[completar número de matrícula]</em></p>
+              <p class="mb-0">Email: <a href="mailto:exequielmarega@gmail.com">exequielmarega@gmail.com</a></p>
+            </div>
+
+            <!-- Redes sociales: ocultas por pedido. Quitar clase em-social-hidden para mostrar. -->
+            <div class="em-social em-social-hidden" aria-hidden="true">
+              <a href="#" aria-label="LinkedIn" tabindex="-1"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="#" aria-label="Instagram" tabindex="-1"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== 8. FOOTER ========== -->
+  <footer class="em-footer" role="contentinfo">
+    <div class="container">
+      <div class="row g-4 em-footer-contact">
+        <div class="col-md-4">
+          <h3>Mándanos un correo</h3>
+          <p><a href="mailto:exequielmarega@gmail.com">exequielmarega@gmail.com</a></p>
+        </div>
+        <div class="col-md-4">
+          <h3>Visítanos</h3>
+          <p><!-- TODO: dirección física -->Consultas con cita previa</p>
+          <p class="mb-0" style="color: var(--em-gray-light); font-size: 0.85rem;">[DIRECCIÓN — completar]</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Llámanos</h3>
+          <p><a href="tel:+54343155118321">0343 155 118321</a></p>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-lg-6">
+          <h3>Áreas de servicio</h3>
+          <ul class="em-footer-services row row-cols-1 row-cols-sm-2">
+            <li class="col"><a href="#servicio-penal">Derecho Penal</a></li>
+            <li class="col"><a href="#servicio-familia">Derecho de Familia</a></li>
+            <li class="col"><a href="#servicio-laboral">Derecho Laboral</a></li>
+            <li class="col"><a href="#servicio-civil">Derecho Civil</a></li>
+            <li class="col"><a href="#servicio-bancario">Derecho Bancario</a></li>
+            <li class="col"><a href="#servicio-comercial">Derecho Comercial</a></li>
+            <li class="col"><a href="#servicio-sucesiones">Sucesiones</a></li>
+            <li class="col"><a href="#servicio-accidentes">Accidentes y Daños</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="em-footer-rule">
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 em-footer-legal">
+        <p class="mb-0">&copy; <span id="yearNow">2026</span> HMM. Todos los derechos reservados.</p>
+        <div>
+          <a href="cookies.html">Cookies</a>
+          <a href="privacidad.html">Privacidad</a>
+          <a href="aviso-legal.html">Aviso Legal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== 9. WHATSAPP FLOTANTE ========== -->
+  <div class="em-wa" id="waWidget">
+    <div class="em-wa-panel" id="waPanel" role="dialog" aria-labelledby="waTitle" aria-hidden="true">
+      <button type="button" class="em-wa-close" aria-label="Cerrar">&times;</button>
+      <p id="waTitle" class="fw-semibold mb-1" style="font-family: var(--em-font-serif); font-size: 1.15rem; color: var(--em-black);">Horacio Exequiel Marega</p>
+      <p>Hola. ¿En qué puedo ayudarte? Abrí el chat y contame tu consulta.</p>
+      <a class="btn-em em-wa-open" href="#" id="waOpen" style="width: 100%; justify-content: center;">Abrir chat</a>
+    </div>
+    <button type="button" class="em-wa-btn" aria-label="Abrir WhatsApp" aria-expanded="false" aria-controls="waPanel">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
 </body>
-
+</html>
